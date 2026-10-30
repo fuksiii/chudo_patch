@@ -1,0 +1,1444 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чудо-пластырь — биоразлагаемые пластыри на основе полимеров</title>
+    <meta name="description" content="ИП «Чудо-пластырь» — российский производитель биоразлагаемых пластырей на основе полимеров. Инновационная формула, экологично, доступно.">
+    <meta name="theme-color" content="#059669">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23059669'/%3E%3Cstop offset='1' stop-color='%230284c7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Crect x='14' y='28' width='36' height='8' rx='4' fill='white'/%3E%3Crect x='28' y='14' width='8' height='36' rx='4' fill='white'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f4f6fb;
+            --white: #ffffff;
+            --ink: #0f172a;
+            --ink-soft: #334155;
+            --muted: #64748b;
+            --line: #e2e8f0;
+            --emerald: #059669;
+            --emerald-2: #10b981;
+            --sky: #0284c7;
+            --sky-2: #38bdf8;
+            --violet: #7c3aed;
+            --violet-2: #a78bfa;
+            --orange: #ea580c;
+            --orange-2: #f59e0b;
+            --pink: #db2777;
+            --pink-2: #f472b6;
+            --green: #16a34a;
+            --red: #dc2626;
+            --radius: 20px;
+            --radius-sm: 14px;
+            --shadow-sm: 0 4px 14px rgba(15, 23, 42, 0.06);
+            --shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+            --shadow-lg: 0 24px 60px rgba(15, 23, 42, 0.12);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.25;
+            z-index: 0;
+            pointer-events: none;
+        }
+        body::before {
+            width: 520px; height: 520px;
+            background: radial-gradient(circle, #6ee7b7, transparent 70%);
+            top: -160px; right: -120px;
+        }
+        body::after {
+            width: 460px; height: 460px;
+            background: radial-gradient(circle, #7dd3fc, transparent 70%);
+            bottom: -160px; left: -140px;
+        }
+
+        .wrap {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ================= NAV ================= */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--line);
+        }
+        .nav-inner {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 1.05rem;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .logo-mark {
+            width: 38px; height: 38px;
+            border-radius: 11px;
+            background: linear-gradient(135deg, var(--emerald), var(--sky));
+            display: grid;
+            place-items: center;
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+        }
+        .logo-mark svg { width: 22px; height: 22px; }
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            margin-left: auto;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--ink-soft);
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: color 0.2s;
+            white-space: nowrap;
+        }
+        .nav-links a:hover { color: var(--emerald); }
+        .nav-cta {
+            background: linear-gradient(135deg, var(--emerald), var(--emerald-2));
+            color: #fff;
+            border: none;
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(5, 150, 105, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            white-space: nowrap;
+            text-decoration: none;
+        }
+        .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(5, 150, 105, 0.4); }
+
+        /* ================= HERO ================= */
+        .hero {
+            position: relative;
+            border-radius: 28px;
+            overflow: hidden;
+            margin: 28px 0 56px;
+            box-shadow: var(--shadow-lg);
+            min-height: 460px;
+            display: flex;
+            align-items: center;
+            isolation: isolate;
+        }
+        .hero-bg {
+            position: absolute; inset: 0; z-index: 0;
+            background:
+                radial-gradient(circle at 15% 20%, #10b981 0%, transparent 45%),
+                radial-gradient(circle at 85% 25%, #38bdf8 0%, transparent 50%),
+                radial-gradient(circle at 70% 90%, #a78bfa 0%, transparent 55%),
+                linear-gradient(135deg, #064e3b, #0c4a6e 55%, #2e1065);
+        }
+        .hero-deco {
+            position: absolute; inset: 0;
+            width: 100%; height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .hero-fade {
+            position: absolute; inset: 0; z-index: 2;
+            background: linear-gradient(to right, rgba(15, 23, 42, 0.55), transparent 70%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            padding: 56px 52px;
+            color: #fff;
+            max-width: 780px;
+        }
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(6px);
+            padding: 7px 16px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 20px;
+        }
+        .hero-eyebrow .dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: #4ade80;
+            box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.35);
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 4.5vw, 3.4rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.035em;
+            margin-bottom: 18px;
+            text-shadow: 0 2px 24px rgba(0, 0, 0, 0.3);
+        }
+        .hero h1 .accent {
+            background: linear-gradient(120deg, #6ee7b7, #7dd3fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .btn-primary {
+            background: #fff;
+            color: #064e3b;
+            border: none;
+            font-family: inherit;
+            font-size: 0.92rem;
+            font-weight: 800;
+            padding: 14px 28px;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3); }
+        .btn-ghost {
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(6px);
+            font-family: inherit;
+            font-size: 0.92rem;
+            font-weight: 700;
+            padding: 13px 26px;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .btn-ghost:hover { background: rgba(255, 255, 255, 0.22); transform: translateY(-3px); }
+
+        /* ================= STATS ================= */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 18px;
+            margin: -80px 0 60px;
+            position: relative;
+            z-index: 3;
+        }
+        .stat {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 24px 22px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--line);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.25s;
+        }
+        .stat:hover { transform: translateY(-4px); }
+        .stat::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+            background: linear-gradient(180deg, var(--emerald), var(--emerald-2));
+        }
+        .stat:nth-child(2)::before { background: linear-gradient(180deg, var(--sky), var(--sky-2)); }
+        .stat:nth-child(3)::before { background: linear-gradient(180deg, var(--violet), var(--violet-2)); }
+        .stat:nth-child(4)::before { background: linear-gradient(180deg, var(--orange), var(--orange-2)); }
+        .stat .stat-icon {
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+        .stat .stat-val {
+            font-size: 1.85rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--emerald), var(--sky));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat:nth-child(2) .stat-val { background: linear-gradient(135deg, var(--sky), var(--violet)); -webkit-background-clip: text; background-clip: text; }
+        .stat:nth-child(3) .stat-val { background: linear-gradient(135deg, var(--violet), var(--pink)); -webkit-background-clip: text; background-clip: text; }
+        .stat:nth-child(4) .stat-val { background: linear-gradient(135deg, var(--orange), var(--pink)); -webkit-background-clip: text; background-clip: text; }
+        .stat .stat-label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        /* ================= SECTION ================= */
+        .sec { margin-bottom: 64px; }
+        .sec-head {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+        .sec-tag {
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--emerald);
+            background: rgba(5, 150, 105, 0.1);
+            padding: 5px 14px;
+            border-radius: 20px;
+            flex-shrink: 0;
+        }
+        .sec-head h2 {
+            font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            line-height: 1.2;
+        }
+
+        /* ================= ABOUT ================= */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 28px;
+            align-items: center;
+        }
+        .about-text p {
+            font-size: 1rem;
+            color: var(--ink-soft);
+            margin-bottom: 16px;
+        }
+        .about-text p strong { color: var(--emerald); font-weight: 800; }
+        .about-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+        .badge {
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 7px 14px;
+            border-radius: 30px;
+            background: #ecfdf5;
+            color: #047857;
+            border: 1px solid #a7f3d0;
+        }
+        .badge.sky { background: #f0f9ff; color: #0369a1; border-color: #bae6fd; }
+        .badge.violet { background: #f5f3ff; color: #6d28d9; border-color: #ddd6fe; }
+
+        .about-visual {
+            border-radius: var(--radius);
+            overflow: hidden;
+            position: relative;
+            min-height: 340px;
+            box-shadow: var(--shadow);
+        }
+        .about-visual svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+        /* ================= PRODUCTS ================= */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+        .product {
+            background: var(--white);
+            border-radius: var(--radius);
+            border: 1px solid var(--line);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .product:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+        .product-top {
+            height: 150px;
+            position: relative;
+            overflow: hidden;
+        }
+        .product-top svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+        .product-body { padding: 22px 24px 26px; }
+        .product h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+            margin-bottom: 8px;
+        }
+        .product p {
+            font-size: 0.88rem;
+            color: var(--muted);
+            margin-bottom: 14px;
+        }
+        .product-feats {
+            list-style: none;
+            display: grid;
+            gap: 6px;
+            font-size: 0.84rem;
+            color: var(--ink-soft);
+        }
+        .product-feats li::before {
+            content: '✓ ';
+            color: var(--emerald);
+            font-weight: 800;
+        }
+
+        /* ================= TECH ================= */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
+        .tech {
+            background: linear-gradient(160deg, #fafbff, #f1f4fb);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-sm);
+            padding: 24px 22px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .tech:hover { transform: translateY(-4px); border-color: #a7f3d0; }
+        .tech-icon {
+            width: 48px; height: 48px;
+            border-radius: 13px;
+            background: linear-gradient(135deg, var(--emerald), var(--emerald-2));
+            display: grid;
+            place-items: center;
+            font-size: 1.4rem;
+            margin-bottom: 14px;
+            box-shadow: 0 6px 16px rgba(5, 150, 105, 0.25);
+        }
+        .tech:nth-child(2) .tech-icon { background: linear-gradient(135deg, var(--sky), var(--sky-2)); box-shadow: 0 6px 16px rgba(2, 132, 199, 0.25); }
+        .tech:nth-child(3) .tech-icon { background: linear-gradient(135deg, var(--violet), var(--violet-2)); box-shadow: 0 6px 16px rgba(124, 58, 237, 0.25); }
+        .tech:nth-child(4) .tech-icon { background: linear-gradient(135deg, var(--orange), var(--orange-2)); box-shadow: 0 6px 16px rgba(234, 88, 12, 0.25); }
+        .tech h4 { font-size: 0.98rem; font-weight: 800; margin-bottom: 8px; }
+        .tech p { font-size: 0.85rem; color: var(--muted); }
+
+        /* ================= TIMELINE / ROADMAP ================= */
+        .roadmap {
+            position: relative;
+            padding-left: 32px;
+        }
+        .roadmap::before {
+            content: '';
+            position: absolute;
+            left: 11px; top: 8px; bottom: 8px;
+            width: 3px;
+            border-radius: 2px;
+            background: linear-gradient(180deg, var(--emerald), var(--sky), var(--violet), var(--pink));
+        }
+        .rm-item {
+            position: relative;
+            padding: 0 0 28px 24px;
+        }
+        .rm-item:last-child { padding-bottom: 0; }
+        .rm-item::before {
+            content: '';
+            position: absolute;
+            left: -24px; top: 4px;
+            width: 16px; height: 16px;
+            border-radius: 50%;
+            background: #fff;
+            border: 4px solid var(--emerald);
+            box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.12);
+        }
+        .rm-item:nth-child(2)::before { border-color: var(--sky); box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.12); }
+        .rm-item:nth-child(3)::before { border-color: var(--violet); box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12); }
+        .rm-item:nth-child(4)::before { border-color: var(--orange); box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.12); }
+        .rm-item:nth-child(5)::before { border-color: var(--pink); box-shadow: 0 0 0 4px rgba(219, 39, 119, 0.12); }
+        .rm-year {
+            font-size: 0.76rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--emerald);
+            margin-bottom: 4px;
+        }
+        .rm-item:nth-child(2) .rm-year { color: var(--sky); }
+        .rm-item:nth-child(3) .rm-year { color: var(--violet); }
+        .rm-item:nth-child(4) .rm-year { color: var(--orange); }
+        .rm-item:nth-child(5) .rm-year { color: var(--pink); }
+        .rm-title { font-size: 1rem; font-weight: 800; margin-bottom: 4px; }
+        .rm-desc { font-size: 0.86rem; color: var(--muted); }
+
+        /* ================= BUSINESS PLAN ================= */
+        .bp-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+        .bp-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 26px 28px;
+            box-shadow: var(--shadow-sm);
+        }
+        .bp-card h3 {
+            font-size: 1.02rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .bp-card h3 .bp-num {
+            width: 30px; height: 30px;
+            border-radius: 9px;
+            background: linear-gradient(135deg, var(--emerald), var(--emerald-2));
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-size: 0.82rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .bp-card:nth-child(2) h3 .bp-num { background: linear-gradient(135deg, var(--sky), var(--sky-2)); }
+        .bp-card:nth-child(3) h3 .bp-num { background: linear-gradient(135deg, var(--violet), var(--violet-2)); }
+        .bp-card:nth-child(4) h3 .bp-num { background: linear-gradient(135deg, var(--orange), var(--orange-2)); }
+        .bp-card:nth-child(5) h3 .bp-num { background: linear-gradient(135deg, var(--pink), var(--pink-2)); }
+        .bp-card:nth-child(6) h3 .bp-num { background: linear-gradient(135deg, var(--green), #4ade80); }
+
+        .bp-list {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+            font-size: 0.88rem;
+            color: var(--ink-soft);
+        }
+        .bp-list li {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed var(--line);
+        }
+        .bp-list li:last-child { border-bottom: none; padding-bottom: 0; }
+        .bp-list .k { color: var(--muted); font-weight: 600; }
+        .bp-list .v { font-weight: 800; color: var(--ink); text-align: right; }
+        .bp-list .v.pos { color: var(--green); }
+
+        .fin-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-top: 8px;
+        }
+        .fin-table th, .fin-table td {
+            padding: 9px 10px;
+            text-align: right;
+            border-bottom: 1px solid var(--line);
+        }
+        .fin-table th {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--muted);
+            font-weight: 700;
+        }
+        .fin-table th:first-child, .fin-table td:first-child { text-align: left; }
+        .fin-table td { font-weight: 600; color: var(--ink-soft); }
+        .fin-table tr:last-child td { font-weight: 800; color: var(--ink); border-bottom: none; }
+        .fin-table .profit { color: var(--green); }
+
+        .note {
+            font-size: 0.76rem;
+            color: var(--muted);
+            margin-top: 10px;
+            line-height: 1.55;
+        }
+
+        /* ================= PROMO ================= */
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+        .promo-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            border: 1px solid var(--line);
+            padding: 26px 26px 28px;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .promo-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+        .promo-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--emerald), var(--sky));
+        }
+        .promo-card:nth-child(2)::before { background: linear-gradient(90deg, var(--sky), var(--violet)); }
+        .promo-card:nth-child(3)::before { background: linear-gradient(90deg, var(--violet), var(--pink)); }
+        .promo-card:nth-child(4)::before { background: linear-gradient(90deg, var(--orange), var(--pink)); }
+        .promo-icon {
+            font-size: 1.9rem;
+            margin-bottom: 14px;
+            display: inline-block;
+        }
+        .promo-card h3 { font-size: 1.02rem; font-weight: 800; margin-bottom: 10px; }
+        .promo-card p { font-size: 0.86rem; color: var(--muted); margin-bottom: 14px; }
+        .promo-budget {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 800;
+            padding: 5px 12px;
+            border-radius: 20px;
+            background: #ecfdf5;
+            color: #047857;
+            margin-bottom: 10px;
+        }
+        .promo-card:nth-child(2) .promo-budget { background: #f0f9ff; color: #0369a1; }
+        .promo-card:nth-child(3) .promo-budget { background: #f5f3ff; color: #6d28d9; }
+        .promo-card:nth-child(4) .promo-budget { background: #fff7ed; color: #c2410c; }
+        .promo-actions {
+            list-style: none;
+            display: grid;
+            gap: 6px;
+            font-size: 0.82rem;
+            color: var(--ink-soft);
+        }
+        .promo-actions li::before { content: '→ '; color: var(--emerald); font-weight: 800; }
+
+        /* ================= CONTACT / FORM ================= */
+        .contact {
+            background: linear-gradient(135deg, #064e3b, #0c4a6e 60%, #2e1065);
+            border-radius: var(--radius);
+            padding: 44px 44px;
+            color: #fff;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        .contact::before {
+            content: '';
+            position: absolute;
+            width: 400px; height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.35), transparent 70%);
+            top: -180px; right: -100px;
+            pointer-events: none;
+        }
+        .contact h2 {
+            font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            margin-bottom: 14px;
+            line-height: 1.2;
+            position: relative;
+        }
+        .contact p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 22px;
+            position: relative;
+        }
+        .contact-info {
+            display: grid;
+            gap: 12px;
+            position: relative;
+        }
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.92rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: opacity 0.2s;
+        }
+        .contact-info a:hover { opacity: 0.75; }
+        .contact-info .ci-icon {
+            width: 36px; height: 36px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            display: grid;
+            place-items: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .form {
+            position: relative;
+            display: grid;
+            gap: 12px;
+        }
+        .form input, .form textarea {
+            font-family: inherit;
+            font-size: 0.92rem;
+            padding: 14px 18px;
+            border-radius: 12px;
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            backdrop-filter: blur(6px);
+            outline: none;
+            transition: border-color 0.2s, background 0.2s;
+            width: 100%;
+        }
+        .form input::placeholder, .form textarea::placeholder { color: rgba(255, 255, 255, 0.6); }
+        .form input:focus, .form textarea:focus {
+            border-color: #6ee7b7;
+            background: rgba(255, 255, 255, 0.15);
+        }
+        .form textarea { resize: vertical; min-height: 96px; }
+        .form button {
+            font-family: inherit;
+            font-size: 0.92rem;
+            font-weight: 800;
+            padding: 14px 28px;
+            border-radius: 30px;
+            border: none;
+            background: #fff;
+            color: #064e3b;
+            cursor: pointer;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .form button:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3); }
+        .form-msg {
+            font-size: 0.82rem;
+            font-weight: 700;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .form-msg.show { opacity: 1; }
+
+        /* ================= FOOTER ================= */
+        .footer {
+            margin-top: 56px;
+            padding: 30px 0 20px;
+            border-top: 1px solid var(--line);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        .footer .foot-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+        .footer .foot-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .footer .foot-links a:hover { color: var(--emerald); }
+
+        /* ================= TOAST ================= */
+        .toast {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translate(-50%, -140%);
+            z-index: 100;
+            background: #0f172a;
+            color: #fff;
+            padding: 13px 22px;
+            border-radius: 30px;
+            font-size: 0.84rem;
+            font-weight: 700;
+            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.35);
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s;
+            opacity: 0;
+            max-width: calc(100vw - 32px);
+            text-align: center;
+        }
+        .toast.show { transform: translate(-50%, 0); opacity: 1; }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 960px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .bp-grid { grid-template-columns: 1fr; }
+            .contact { grid-template-columns: 1fr; padding: 32px 26px; }
+            .hero-content { padding: 40px 28px; }
+        }
+        @media (max-width: 720px) {
+            .nav-links { display: none; }
+            .stats { margin-top: 0; }
+            .wrap { padding: 0 16px; }
+            .hero { min-height: 420px; }
+            .footer { justify-content: center; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ NAV ============ -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="logo">
+                <span class="logo-mark">
+                    <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="10" width="18" height="4" rx="2" fill="#fff"/><rect x="10" y="3" width="4" height="18" rx="2" fill="#fff"/></svg>
+                </span>
+                Чудо-пластырь
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#products">Продукция</a></li>
+                <li><a href="#tech">Технология</a></li>
+                <li><a href="#roadmap">Развитие</a></li>
+                <li><a href="#business">Бизнес-план</a></li>
+                <li><a href="#promo">Продвижение</a></li>
+            </ul>
+            <a href="#contact" class="nav-cta">Связаться</a>
+        </div>
+    </nav>
+
+    <div class="wrap">
+
+        <!-- ============ HERO ============ -->
+        <header class="hero">
+            <div class="hero-bg"></div>
+            <svg class="hero-deco" viewBox="0 0 1200 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <g fill="#ffffff" opacity="0.07">
+                    <circle cx="1080" cy="80" r="110" />
+                    <circle cx="940" cy="340" r="52" />
+                    <circle cx="180" cy="90" r="66" />
+                </g>
+                <!-- Полимерная цепь -->
+                <g stroke="#ffffff" stroke-width="4" fill="none" opacity="0.16" stroke-linecap="round">
+                    <path d="M820 120 Q 870 170, 820 220 Q 770 270, 820 320 Q 870 370, 820 420" />
+                    <path d="M880 120 Q 830 170, 880 220 Q 930 270, 880 320 Q 830 370, 880 420" />
+                </g>
+                <g fill="#ffffff" opacity="0.14">
+                    <circle cx="820" cy="120" r="6"/>
+                    <circle cx="880" cy="120" r="6"/>
+                    <circle cx="850" cy="170" r="5"/>
+                    <circle cx="850" cy="270" r="5"/>
+                    <circle cx="850" cy="370" r="5"/>
+                </g>
+                <!-- Пластырь-концепт -->
+                <g transform="translate(430 200) rotate(-18)" opacity="0.2">
+                    <rect x="0" y="0" width="200" height="70" rx="18" fill="#ffffff"/>
+                    <rect x="70" y="20" width="60" height="30" rx="8" fill="#059669"/>
+                    <circle cx="30" cy="35" r="4" fill="#0c4a6e"/>
+                    <circle cx="170" cy="35" r="4" fill="#0c4a6e"/>
+                </g>
+            </svg>
+            <div class="hero-fade"></div>
+            <div class="hero-content">
+                <span class="hero-eyebrow"><span class="dot"></span> ИП · Биотехнологии · Эко-медицина</span>
+                <h1>Пластырь,<br>который <span class="accent">исчезает</span><br>вместе с раной</h1>
+                <p>Биоразлагаемые пластыри на основе полимеров нового поколения. Защищают, лечат и полностью растворяются — без следа для природы.</p>
+                <div class="hero-actions">
+                    <a href="#products" class="btn-primary">
+                        Смотреть продукцию
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a href="#business" class="btn-ghost">Бизнес-план</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- ============ STATS ============ -->
+        <div class="stats">
+            <div class="stat">
+                <span class="stat-icon">🌱</span>
+                <div class="stat-val">90 дней</div>
+                <div class="stat-label">полное разложение в почве</div>
+            </div>
+            <div class="stat">
+                <span class="stat-icon">🧪</span>
+                <div class="stat-val">100%</div>
+                <div class="stat-label">биосовместимые полимеры</div>
+            </div>
+            <div class="stat">
+                <span class="stat-icon">💊</span>
+                <div class="stat-val">3 линейки</div>
+                <div class="stat-label">детская, спортивная, медицинская</div>
+            </div>
+            <div class="stat">
+                <span class="stat-icon">🇷🇺</span>
+                <div class="stat-val">РФ</div>
+                <div class="stat-label">производство в России</div>
+            </div>
+        </div>
+
+        <!-- ============ ABOUT ============ -->
+        <section class="sec" id="about">
+            <div class="sec-head">
+                <span class="sec-tag">О нас</span>
+                <h2>Инновация на страже здоровья и экологии</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p><strong>ИП «Чудо-пластырь»</strong> — российская биотех-компания, которая переосмысливает привычный медицинский пластырь. Мы разработали запатентованную формулу на основе биоразлагаемых полимеров (полилактид, поликапролактон, хитозан), которая обеспечивает надёжную фиксацию и заживление — и при этом полностью разлагается в природной среде.</p>
+                    <p>Наша миссия — сделать медицинские расходники экологичными и доступными, не жертвуя качеством. Обычный пластырь живёт на свалке <strong>десятки лет</strong>, выделяя микропластик. Наш — растворяется за <strong>90 дней</strong> и не оставляет следа.</p>
+                    <p>Мы работаем с малыми и средними аптечными сетями, клиниками и спортивными организациями. Производим в России, гордимся локальными поставками и готовы к масштабированию.</p>
+                    <div class="about-badges">
+                        <span class="badge">Патент на формулу</span>
+                        <span class="badge sky">Сертификат ISO 13485 (план)</span>
+                        <span class="badge violet">Локальное производство</span>
+                        <span class="badge">Эко-упаковка</span>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="av" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0" stop-color="#064e3b"/><stop offset="0.5" stop-color="#0c4a6e"/><stop offset="1" stop-color="#2e1065"/>
+                            </linearGradient>
+                            <linearGradient id="av2" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0" stop-color="#10b981"/><stop offset="1" stop-color="#38bdf8"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="500" height="400" fill="url(#av)"/>
+                        <g fill="#fff" opacity="0.06">
+                            <circle cx="450" cy="40" r="100"/>
+                            <circle cx="60" cy="360" r="80"/>
+                        </g>
+                        <!-- Пластырь крупным планом -->
+                        <g transform="translate(90 130) rotate(-12)">
+                            <rect x="0" y="0" width="320" height="120" rx="28" fill="url(#av2)" opacity="0.9"/>
+                            <rect x="100" y="30" width="120" height="60" rx="16" fill="#fff" opacity="0.85"/>
+                            <g fill="#064e3b" opacity="0.6">
+                                <circle cx="130" cy="60" r="5"/>
+                                <circle cx="160" cy="60" r="5"/>
+                                <circle cx="190" cy="60" r="5"/>
+                                <circle cx="220" cy="60" r="5"/>
+                            </g>
+                            <g fill="#fff" opacity="0.35">
+                                <circle cx="30" cy="30" r="4"/>
+                                <circle cx="30" cy="60" r="4"/>
+                                <circle cx="30" cy="90" r="4"/>
+                                <circle cx="290" cy="30" r="4"/>
+                                <circle cx="290" cy="60" r="4"/>
+                                <circle cx="290" cy="90" r="4"/>
+                            </g>
+                        </g>
+                        <g fill="#fff" opacity="0.15">
+                            <circle cx="120" cy="80" r="10"/>
+                            <circle cx="400" cy="300" r="8"/>
+                            <circle cx="80" cy="300" r="6"/>
+                        </g>
+                        <text x="250" y="360" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" fill="#6ee7b7" letter-spacing="2">BIODEGRADABLE PATCH</text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PRODUCTS ============ -->
+        <section class="sec" id="products">
+            <div class="sec-head">
+                <span class="sec-tag">Продукция</span>
+                <h2>Три линейки под разные задачи</h2>
+            </div>
+            <div class="products">
+                <article class="product">
+                    <div class="product-top">
+                        <svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice">
+                            <defs><linearGradient id="pg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10b981"/><stop offset="1" stop-color="#059669"/></linearGradient></defs>
+                            <rect width="400" height="150" fill="url(#pg1)"/>
+                            <g fill="#fff" opacity="0.15"><circle cx="340" cy="30" r="60"/><circle cx="60" cy="130" r="50"/></g>
+                            <g transform="translate(100 50) rotate(-8)">
+                                <rect x="0" y="0" width="200" height="50" rx="14" fill="#fff" opacity="0.9"/>
+                                <rect x="70" y="12" width="60" height="26" rx="8" fill="#10b981"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="product-body">
+                        <h3>🧸 Детская линейка «Мягкий старт»</h3>
+                        <p>Гипоаллергенные пластыри с природными антисептиками (календула, ромашка). Не оставляют следов, безопасны для чувствительной кожи.</p>
+                        <ul class="product-feats">
+                            <li>Без латекса и клея-аллергена</li>
+                            <li>Водостойкая формула</li>
+                            <li>Размеры для малышей и подростков</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="product">
+                    <div class="product-top">
+                        <svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice">
+                            <defs><linearGradient id="pg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#0284c7"/></linearGradient></defs>
+                            <rect width="400" height="150" fill="url(#pg2)"/>
+                            <g fill="#fff" opacity="0.15"><circle cx="340" cy="30" r="60"/><circle cx="60" cy="130" r="50"/></g>
+                            <g transform="translate(100 50) rotate(-8)">
+                                <rect x="0" y="0" width="200" height="50" rx="14" fill="#fff" opacity="0.9"/>
+                                <rect x="70" y="12" width="60" height="26" rx="8" fill="#0284c7"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="product-body">
+                        <h3>🏃 Спортивная линейка «Active»</h3>
+                        <p>Повышенная адгезия и дыхательная мембрана для активного образа жизни. Держится до 7 дней, выдерживает воду, пот и нагрузку.</p>
+                        <ul class="product-feats">
+                            <li>Усиленная фиксация</li>
+                            <li>Антибактериальное покрытие</li>
+                            <li>Формат тейпа и классического пластыря</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="product">
+                    <div class="product-top">
+                        <svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice">
+                            <defs><linearGradient id="pg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs>
+                            <rect width="400" height="150" fill="url(#pg3)"/>
+                            <g fill="#fff" opacity="0.15"><circle cx="340" cy="30" r="60"/><circle cx="60" cy="130" r="50"/></g>
+                            <g transform="translate(100 50) rotate(-8)">
+                                <rect x="0" y="0" width="200" height="50" rx="14" fill="#fff" opacity="0.9"/>
+                                <rect x="70" y="12" width="60" height="26" rx="8" fill="#7c3aed"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="product-body">
+                        <h3>🏥 Медицинская линейка «Clinic Pro»</h3>
+                        <p>Послеоперационные пластыри с антимикробной пропиткой. Ускоряют заживление и снижают риск инфицирования. Для клиник и стационаров.</p>
+                        <ul class="product-feats">
+                            <li>Серебросодержащая пропитка</li>
+                            <li>Прозрачное окно для контроля раны</li>
+                            <li>Стерильная упаковка</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============ TECH ============ -->
+        <section class="sec" id="tech">
+            <div class="sec-head">
+                <span class="sec-tag">Технология</span>
+                <h2>Формула, которой нет у конкурентов</h2>
+            </div>
+            <div class="tech-grid">
+                <div class="tech">
+                    <div class="tech-icon">🧬</div>
+                    <h4>Биоразлагаемые полимеры</h4>
+                    <p>Основа — полилактид (PLA) и поликапролактон (PCL). Разлагаются в почве за 90 дней без токсичных остатков.</p>
+                </div>
+                <div class="tech">
+                    <div class="tech-icon">💧</div>
+                    <h4>Дышащая мембрана</h4>
+                    <p>Микроперфорация обеспечивает воздухообмен, но удерживает влагу и защищает рану от внешней среды.</p>
+                </div>
+                <div class="tech">
+                    <div class="tech-icon">🛡️</div>
+                    <h4>Антимикробный слой</h4>
+                    <p>Ионы серебра и хитозан подавляют рост бактерий, снижая риск воспаления без антибиотиков.</p>
+                </div>
+                <div class="tech">
+                    <div class="tech-icon">🌱</div>
+                    <h4>Эко-упаковка</h4>
+                    <p>Крафт-картон из вторсырья и биоразлагаемая плёнка. Ноль пластика — ноль следа.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ ROADMAP ============ -->
+        <section class="sec" id="roadmap">
+            <div class="sec-head">
+                <span class="sec-tag">Развитие</span>
+                <h2>Дорожная карта на 2025–2027</h2>
+            </div>
+            <div class="roadmap">
+                <div class="rm-item">
+                    <div class="rm-year">2025 · Q1–Q2</div>
+                    <div class="rm-title">Запуск ИП и разработка формулы</div>
+                    <div class="rm-desc">Регистрация ИП, патентный поиск, лабораторные прототипы, испытания на биосовместимость.</div>
+                </div>
+                <div class="rm-item">
+                    <div class="rm-year">2025 · Q3–Q4</div>
+                    <div class="rm-title">Сертификация и пилотные партии</div>
+                    <div class="rm-desc">Получение сертификата соответствия, тестовые партии для клиник-партнёров и аптек.</div>
+                </div>
+                <div class="rm-item">
+                    <div class="rm-year">2026 · H1</div>
+                    <div class="rm-title">Коммерческий запуск</div>
+                    <div class="rm-desc">Выход на маркетплейсы (Ozon, Wildberries), договоры с 20+ аптечными сетями.</div>
+                </div>
+                <div class="rm-item">
+                    <div class="rm-year">2026 · H2</div>
+                    <div class="rm-title">Масштабирование и экспорт</div>
+                    <div class="rm-desc">Контрактное производство, выход в Беларусь и Казахстан через дистрибьюторов.</div>
+                </div>
+                <div class="rm-item">
+                    <div class="rm-year">2027</div>
+                    <div class="rm-title">Новые линейки и НИОКР</div>
+                    <div class="rm-desc">Пластыри с лекарственными пропитками, коллаборация с фармкомпаниями, патент РСТ.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ BUSINESS PLAN ============ -->
+        <section class="sec" id="business">
+            <div class="sec-head">
+                <span class="sec-tag">Бизнес-план</span>
+                <h2>Как устроена экономика бизнеса</h2>
+            </div>
+            <div class="bp-grid">
+                <div class="bp-card">
+                    <h3><span class="bp-num">1</span> Резюме проекта</h3>
+                    <ul class="bp-list">
+                        <li><span class="k">Форма</span><span class="v">ИП, УСН 6%</span></li>
+                        <li><span class="k">ОКВЭД</span><span class="v">21.20 / 46.46.2</span></li>
+                        <li><span class="k">Стартовый капитал</span><span class="v">1,5 млн ₽</span></li>
+                        <li><span class="k">Срок выхода на окупаемость</span><span class="v">14–16 мес.</span></li>
+                        <li><span class="k">Цель на 12 мес.</span><span class="v pos">1 млн ₽/мес</span></li>
+                        <li><span class="k">Цель на 24 мес.</span><span class="v pos">3 млн ₽/мес</span></li>
+                    </ul>
+                </div>
+
+                <div class="bp-card">
+                    <h3><span class="bp-num">2</span> Стартовые инвестиции</h3>
+                    <ul class="bp-list">
+                        <li><span class="k">Регистрация ИП и юр. сопровождение</span><span class="v">30 000 ₽</span></li>
+                        <li><span class="k">Разработка формулы и лаборатория</span><span class="v">450 000 ₽</span></li>
+                        <li><span class="k">Сертификация и испытания</span><span class="v">250 000 ₽</span></li>
+                        <li><span class="k">Пробная партия (10 000 шт.)</span><span class="v">320 000 ₽</span></li>
+                        <li><span class="k">Упаковка и брендинг</span><span class="v">180 000 ₽</span></li>
+                        <li><span class="k">Сайт, реклама, маркетплейсы</span><span class="v">170 000 ₽</span></li>
+                        <li><span class="k">Резерв на 3 месяца</span><span class="v">100 000 ₽</span></li>
+                        <li><span class="k">Итого</span><span class="v">1 500 000 ₽</span></li>
+                    </ul>
+                </div>
+
+                <div class="bp-card">
+                    <h3><span class="bp-num">3</span> Операционные расходы (ежемесячно)</h3>
+                    <ul class="bp-list">
+                        <li><span class="k">Закупка сырья и контрактное производство</span><span class="v">~180 000 ₽</span></li>
+                        <li><span class="k">Логистика и хранение</span><span class="v">~35 000 ₽</span></li>
+                        <li><span class="k">Реклама и маркетинг</span><span class="v">~60 000 ₽</span></li>
+                        <li><span class="k">Комиссии маркетплейсов</span><span class="v">~15% выручки</span></li>
+                        <li><span class="k">Налоги (УСН 6%)</span><span class="v">6% выручки</span></li>
+                        <li><span class="k">Прочее (бухгалтерия, связь)</span><span class="v">~25 000 ₽</span></li>
+                    </ul>
+                </div>
+
+                <div class="bp-card">
+                    <h3><span class="bp-num">4</span> Ценообразование</h3>
+                    <ul class="bp-list">
+                        <li><span class="k">Себестоимость 1 пластыря (детская)</span><span class="v">~12 ₽</span></li>
+                        <li><span class="k">Себестоимость (спортивная)</span><span class="v">~16 ₽</span></li>
+                        <li><span class="k">Себестоимость (клиническая)</span><span class="v">~28 ₽</span></li>
+                        <li><span class="k">Розничная цена (детская)</span><span class="v">59–79 ₽</span></li>
+                        <li><span class="k">Розничная цена (спортивная)</span><span class="v">99–129 ₽</span></li>
+                        <li><span class="k">Розничная цена (клиническая)</span><span class="v">149–199 ₽</span></li>
+                        <li><span class="k">Наценка</span><span class="v pos">150–220%</span></li>
+                    </ul>
+                </div>
+
+                <div class="bp-card" style="grid-column: 1 / -1;">
+                    <h3><span class="bp-num">5</span> Финансовый прогноз (первые 12 месяцев)</h3>
+                    <table class="fin-table">
+                        <thead>
+                            <tr>
+                                <th>Показатель</th>
+                                <th>Мес. 1–3</th>
+                                <th>Мес. 4–6</th>
+                                <th>Мес. 7–9</th>
+                                <th>Мес. 10–12</th>
+                                <th>Итого год</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Продано упаковок, шт.</td>
+                                <td>2 000</td>
+                                <td>5 000</td>
+                                <td>9 000</td>
+                                <td>14 000</td>
+                                <td>30 000</td>
+                            </tr>
+                            <tr>
+                                <td>Средний чек, ₽</td>
+                                <td>90</td>
+                                <td>95</td>
+                                <td>100</td>
+                                <td>105</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td>Выручка, ₽</td>
+                                <td>180 000</td>
+                                <td>475 000</td>
+                                <td>900 000</td>
+                                <td>1 470 000</td>
+                                <td class="profit">3 025 000</td>
+                            </tr>
+                            <tr>
+                                <td>Расходы, ₽</td>
+                                <td>420 000</td>
+                                <td>560 000</td>
+                                <td>740 000</td>
+                                <td>980 000</td>
+                                <td>2 700 000</td>
+                            </tr>
+                            <tr>
+                                <td>Прибыль, ₽</td>
+                                <td>−240 000</td>
+                                <td>−85 000</td>
+                                <td>160 000</td>
+                                <td>490 000</td>
+                                <td class="profit">325 000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="note">Прогноз основан на консервативном сценарии выхода на маркетплейсы и 20 аптечных сетей. Точка безубыточности — 7–8 месяц. Полная окупаемость вложений (1,5 млн ₽) — 14–16 месяцев при положительной динамике.</p>
+                </div>
+
+                <div class="bp-card" style="grid-column: 1 / -1;">
+                    <h3><span class="bp-num">6</span> Риски и их снижение</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+                        <div class="tech" style="margin: 0;">
+                            <div class="tech-icon" style="background: linear-gradient(135deg, #dc2626, #f87171);">⚠️</div>
+                            <h4>Долгая сертификация</h4>
+                            <p>Закладываем резерв 3 месяца и работаем параллельно с лабораторией.</p>
+                        </div>
+                        <div class="tech" style="margin: 0;">
+                            <div class="tech-icon" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">💸</div>
+                            <h4>Рост цен на сырьё</h4>
+                            <p>Диверсификация поставщиков: минимум 2 контрактных производителя.</p>
+                        </div>
+                        <div class="tech" style="margin: 0;">
+                            <div class="tech-icon" style="background: linear-gradient(135deg, #0284c7, #38bdf8);">📉</div>
+                            <h4>Низкий спрос на старте</h4>
+                            <p>Пилоты с клиниками и аптеками, отзывы, кейсы — до масштабной рекламы.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PROMO ============ -->
+        <section class="sec" id="promo">
+            <div class="sec-head">
+                <span class="sec-tag">Продвижение</span>
+                <h2>Как мы будем заявлять о себе</h2>
+            </div>
+            <div class="promo-grid">
+                <div class="promo-card">
+                    <span class="promo-icon">🛒</span>
+                    <h3>Маркетплейсы</h3>
+                    <p>Ozon, Wildberries, Яндекс Маркет — основной канал первых продаж и отзывов.</p>
+                    <span class="promo-budget">Бюджет: 40 000 ₽/мес</span>
+                    <ul class="promo-actions">
+                        <li>Карточки с видео-демонстрацией</li>
+                        <li>Отзывы первых клиентов</li>
+                        <li>Внутренняя реклама маркетплейсов</li>
+                    </ul>
+                </div>
+                <div class="promo-card">
+                    <span class="promo-icon">📱</span>
+                    <h3>SMM и контент</h3>
+                    <p>Соцсети (ВК, Telegram, Instagram*), блог о здоровье и эко-привычках.</p>
+                    <span class="promo-budget">Бюджет: 30 000 ₽/мес</span>
+                    <ul class="promo-actions">
+                        <li>Reels и короткие видео о формуле</li>
+                        <li>Коллаборации с блогерами-экоактивистами</li>
+                        <li>Розыгрыши и челленджи</li>
+                    </ul>
+                </div>
+                <div class="promo-card">
+                    <span class="promo-icon">🤝</span>
+                    <h3>B2B и аптеки</h3>
+                    <p>Прямые договоры с аптечными сетями, клиниками и спортивными клубами.</p>
+                    <span class="promo-budget">Бюджет: 25 000 ₽/мес</span>
+                    <ul class="promo-actions">
+                        <li>Пробные наборы для фармацевтов</li>
+                        <li>Семинары для клиник</li>
+                        <li>Партнёрские программы для фитнеса</li>
+                    </ul>
+                </div>
+                <div class="promo-card">
+                    <span class="promo-icon">📰</span>
+                    <h3>PR и СМИ</h3>
+                    <p>Публикации в тематических изданиях о биотехе, экологии и здоровье.</p>
+                    <span class="promo-budget">Бюджет: 15 000 ₽/мес</span>
+                    <ul class="promo-actions">
+                        <li>Истории о создании продукта</li>
+                        <li>Экспертные колонки</li>
+                        <li>Участие в эко-выставках</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="note" style="margin-top: 18px;">* Instagram принадлежит Meta, признанной экстремистской организацией и запрещённой на территории РФ.</p>
+        </section>
+
+        <!-- ============ CONTACT ============ -->
+        <section class="sec" id="contact">
+            <div class="contact">
+                <div>
+                    <h2>Готовы обсудить сотрудничество</h2>
+                    <p>Пишите нам, если вы аптечная сеть, клиника, спортивный клуб или инвестор. Ответим в течение рабочего дня.</p>
+                    <div class="contact-info">
+                        <a href="mailto:hello@chudo-plastyr.ru">
+                            <span class="ci-icon">✉️</span>
+                            hello@chudo-plastyr.ru
+                        </a>
+                        <a href="tel:+79000000000">
+                            <span class="ci-icon">📞</span>
+                            +7 (900) 000-00-00
+                        </a>
+                        <a href="https://t.me/chudo_plastyr" target="_blank" rel="noopener">
+                            <span class="ci-icon">💬</span>
+                            Telegram: @chudo_plastyr
+                        </a>
+                    </div>
+                </div>
+                <form class="form" id="contactForm" novalidate>
+                    <input type="text" id="fName" placeholder="Ваше имя" required>
+                    <input type="email" id="fEmail" placeholder="Email или телефон" required>
+                    <textarea id="fMsg" placeholder="Расскажите о задаче: партнёрство, опт, инвестиции…" required></textarea>
+                    <button type="submit">Отправить заявку</button>
+                    <div class="form-msg" id="formMsg"></div>
+                </form>
+            </div>
+        </section>
+
+        <!-- ============ FOOTER ============ -->
+        <footer class="footer">
+            <div>© 2025 ИП «Чудо-пластырь» · Биоразлагаемые пластыри на полимерной основе</div>
+            <div class="foot-links">
+                <a href="#about">О нас</a>
+                <a href="#products">Продукция</a>
+                <a href="#business">Бизнес-план</a>
+                <a href="#promo">Продвижение</a>
+                <a href="#contact">Контакты</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        (function () {
+            'use strict';
+
+            /* ============ TOAST ============ */
+            function toast(msg) {
+                var t = document.createElement('div');
+                t.className = 'toast';
+                t.textContent = msg;
+                document.body.appendChild(t);
+                requestAnimationFrame(function () { t.classList.add('show'); });
+                setTimeout(function () {
+                    t.classList.remove('show');
+                    setTimeout(function () { t.remove(); }, 450);
+                }, 2600);
+            }
+
+            /* ============ NAV SMOOTH SCROLL ============ */
+            document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    var target = document.querySelector(link.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            /* ============ FORM ============ */
+            var form = document.getElementById('contactForm');
+            var msg = document.getElementById('formMsg');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var name = document.getElementById('fName').value.trim();
+                var contact = document.getElementById('fEmail').value.trim();
+                var text = document.getElementById('fMsg').value.trim();
+
+                if (!name || !contact || !text) {
+                    msg.textContent = '⚠️ Заполните все поля';
+                    msg.style.color = '#fca5a5';
+                    msg.classList.add('show');
+                    return;
+                }
+
+                msg.textContent = '✅ Спасибо, ' + name + '! Заявка отправлена — мы свяжемся с вами.';
+                msg.style.color = '#6ee7b7';
+                msg.classList.add('show');
+                form.reset();
+                toast('✅ Заявка отправлена');
+
+                setTimeout(function () {
+                    msg.classList.remove('show');
+                }, 5000);
+            });
+
+            /* ============ REVEAL ON SCROLL ============ */
+            if ('IntersectionObserver' in window) {
+                var obs = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.08 });
+
+                document.querySelectorAll('.sec, .stat, .product, .tech, .promo-card, .bp-card, .rm-item').forEach(function (el) {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(24px)';
+                    el.style.transition = 'opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1)';
+                    obs.observe(el);
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
